@@ -1,10 +1,51 @@
 <html>
-
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+
+	<script src="colorpicker/jquery.colorpicker.js"></script>
+	<script src="tinycolor/tinycolor-min.js"></script>
+	<link href="colorpicker/jquery.colorpicker.css" rel="stylesheet" type="text/css"/>
+
+	<script src="readable.js"></script>
+
+	<style>
+		* {
+			font-family: arial, sans-serif;
+			font-size: 14px !important;
+		}
+	</style>
 </head>
 <body>
 
+<p>This is an example of showing a readable foreground color on any background color. See the full explanation <a href=""></a></p>
+
 <input id="cp" type="text" value="186aa7"/>
+<script>
+	function updateColor(color) {
+		var hex = color.formatted;
+        $('#cp').css('background-color', '#' + hex);
+        $('#cp').css('color', getReadableColor('#' + hex));
+	};
+   	$( function() {
+        $('#cp').colorpicker({
+            select: function (e, color) {
+                updateColor(color);
+            }
+		});
+	});
+	updateColor({formatted: $('#cp').val()});
+</script>
+
+<p>The main function is in <a href="script.js">script.js</a>. This example uses the following:
+<ul>
+	<li><a href="https://github.com/vanderlee/colorpicker" target="_blank">https://github.com/vanderlee/colorpicker</a></li>
+	<li><a href="https://github.com/bgrins/TinyColor" target="_blank">https://github.com/bgrins/TinyColor</a></li>
+</ul>
+</p>
+
+<p><a href="https://github.com/aramkocharyan/readable-color">Source on GitHub</a></p>
 
 </body>
 </html>
