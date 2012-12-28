@@ -1,0 +1,6 @@
+[submodule "tinycolor"]
+	path = tinycolor
+	url = git://github.com/bgrins/TinyColor.git
+[submodule "colorpicker"]
+	path = colorpicker
+	url = git://github.com/vanderlee/colorpicker.git
