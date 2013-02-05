@@ -1,4 +1,8 @@
 (function ($) {
+    /*
+    https://github.com/aramkocharyan/readable-color/
+    Released under the MIT licence.
+    */
 
     /**
      * Returns either black or white to ensure this color is distinguishable with the given RGB hex.
